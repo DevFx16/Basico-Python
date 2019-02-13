@@ -10,6 +10,8 @@ print(y + z)
 print(y - z)
 print(y * z)
 print(y / z)
+#modulo
+print(y // z)
 print(y ** z)
 print(y == z)
 print(y != z)
