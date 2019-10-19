@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FloatField, IntegerField
 from flask_wtf.file import FileField
-from wtforms.validators import Required, Email, 
+from wtforms.validators import Required, Email
 
 class Form(FlaskForm):
     Id = StringField('Id:', validators=[Required(),])

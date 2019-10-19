@@ -14,6 +14,7 @@ db = SQLAlchemy(app)
 def inicio():
     from aplicacion.model import Empleado
     Empleados = Empleado.query.all()
+    print(Empleados);
     return render_template("inicio.html", Empleados=Empleados)
 
 
@@ -28,7 +29,8 @@ def new():
     from aplicacion.model import Empleado
     form = Form(request.form)
     if form.validate_on_submit():
-        emple = Empleado(Id=form.Id.data, Nombres=form.Nombres.data, )
+        emple = Empleado(Id=form.Id.data, Nombres=form.Nombres.data,
+                         Apellidos=form.Apellidos.data, Edad=form.Edad.data)
         db.session.add(emple)
         db.session.commit()
     return redirect(url_for("inicio"))
