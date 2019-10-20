@@ -14,8 +14,9 @@ db = SQLAlchemy(app)
 @app.route('/')
 def inicio():
     from model import Empleado
+    db.create_all()
     Empleados = Empleado.query.all()
-    return render_template("templates/inicio.html", Empleados=Empleados)
+    return render_template("index.html", Empleados=Empleados)
 
 
 @app.route('/Add')
@@ -40,6 +41,7 @@ def new():
 def page_not_found(error):
     return render_template("error.html", error="Página no encontrada..."), 404
 
+
 if __name__ == '__main__':
-  port = int(os.environ.get('PORT', 5000))
-  app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)

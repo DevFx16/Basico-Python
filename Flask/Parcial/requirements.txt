@@ -1,6 +1,0 @@
-Flask
-Flask-Script
-Flask-Bootstrap
-Flask-WTF
-Flask-Sqlalchemy
-gunicorn
