@@ -12,10 +12,11 @@ name = "pypi"
 [packages]
 
 flask = "*"
+flask_wtf = "*"
 flask-sqlalchemy = "*"
 "psycopg2" = "*"
 gunicorn = "*"
-flask-bootrap = "*"
+flask-bootstrap = "*"
 
 
 [requires]

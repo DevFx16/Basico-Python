@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 import config
-from form import Form
+from form import Form, FileUpload
 import os
 
 app = Flask(__name__)
@@ -28,13 +28,15 @@ def add():
 @app.route('/new', methods=["POST"])
 def new():
     from model import Empleado
-    form = Form(request.form)
+    Fb = FileUpload()
+    form = Form(request.form.copy())
     if form.validate_on_submit():
+        path = Fb.upload(request.files['Image'], form.Id.data)
         emple = Empleado(Id=form.Id.data, Nombres=form.Nombres.data,
-                         Apellidos=form.Apellidos.data, Edad=form.Edad.data, Email=form.Email.data, Tipo=form.Tipo.data, Profesion=form.Profesion.data, Cargo=form.Cargo.data, Salario=form.Salario.data, Telefono=form.Telefono.data)
+                         Apellidos=form.Apellidos.data, Edad=form.Edad.data, Email=form.Email.data, Tipo=form.Tipo.data, Profesion=form.Profesion.data, Cargo=form.Cargo.data, Salario=form.Salario.data, Telefono=form.Telefono.data, Image=path)
         db.session.add(emple)
         db.session.commit()
-    return redirect(url_for("inicio"))
+        return redirect(url_for("inicio"))
 
 
 @app.errorhandler(404)

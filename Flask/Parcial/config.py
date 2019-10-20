@@ -7,3 +7,4 @@ DEBUG = True
 SQLALCHEMY_DATABASE_URI = 'sqlite:///{}/dbase.db'.format(PWD)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 WTF_CSRF_ENABLED = False
+UPLOAD_FOLDER = 'photos'
