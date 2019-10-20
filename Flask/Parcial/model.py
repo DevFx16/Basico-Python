@@ -1,7 +1,7 @@
 from sqlalchemy import Boolean, Column, ForeignKey
 from sqlalchemy import Integer, String, Float
 from sqlalchemy.orm import relationship
-from aplicacion.app import db
+from app import db
 
 
 class Empleado(db.Model):
