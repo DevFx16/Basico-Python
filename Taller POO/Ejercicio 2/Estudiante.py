@@ -1,7 +1,8 @@
 class Estudiante:
 
-    def __init__(self, Id, Nombre, Programa, Semestre, Email, Institucion, Telefono):
+    def __init__(self, Id, TipoIdentificacion, Nombre, Programa, Semestre, Email, Institucion, Telefono):
         self._Id = Id
+        self._TipoIdentificacion = TipoIdentificacion
         self._Nombre = Nombre
         self._Programa = Programa
         self._Semestre = Semestre
@@ -12,6 +13,10 @@ class Estudiante:
     @property
     def Id(self):
         return self._Id
+
+    @property
+    def TipoIdentificacion(self):
+        return self._TipoIdentificacion
 
     @property
     def Nombre(self):
@@ -38,12 +43,16 @@ class Estudiante:
         return self._Telefono
 
     @Nombre.setter
+    def Id(self, Id):
+        self._Id = Id
+
+    @TipoIdentificacion.setter
+    def TipoIdentificacion(self, TipoIdentificacion):
+        self._TipoIdentificacion = TipoIdentificacion
+
+    @Nombre.setter
     def Nombre(self, Nombre):
         self._Nombre = Nombre
-
-    @Cargo.setter
-    def Cargo(self, Cargo):
-        self._Cargo = Cargo
 
     @Email.setter
     def Email(self, Email):

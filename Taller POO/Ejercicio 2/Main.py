@@ -1,4 +1,4 @@
-from  Estudiante import Estudiante
+from Estudiante import Estudiante
 import os
 
 def Menu():
@@ -8,12 +8,13 @@ def Menu():
     3.Salir
     Seleccione un valor: '''
 i = 0
-estudiante = Estudiante('Setea','Setea', 'Setea', 'Setea', 'Setea', 'Setea', 'Setea')
+estudiante = Estudiante('Setea','Setea', 'Setea', 'Setea', 'Setea', 'Setea', 'Setea', 'Setea')
 while i != 3:
     i = int(input(Menu()))
     if i == 1:       
         os.system('cls')
         print(f'Id: {estudiante.Id}')
+        print(f'Tipo Identificacion: {estudiante.TipoIdentificacion}')
         print(f'Nombre: {estudiante.Nombre}')
         print(f'Programa: {estudiante.Programa}')
         print(f'Semestre: {estudiante.Semestre}')
@@ -24,6 +25,7 @@ while i != 3:
     elif i == 2:
         os.system('cls')
         estudiante.Id = input('Id: ')
+        estudiante.TipoIdentificacion = input('Tipo Identificacion: ')
         estudiante.Nombre = input('Nombre: ')
         estudiante.Programa = input('Programa: ')
         estudiante.Semestre = input('Semestre: ')
