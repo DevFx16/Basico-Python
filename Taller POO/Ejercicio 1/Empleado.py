@@ -1,12 +1,13 @@
 class Empleado:
 
-    def __init__(self, Id, Nombre, Cargo, Salario, Email, Telefono):
+    def __init__(self, Id, Nombre, Cargo, Salario, Email, Telefono, Empresa):
         self._Id = Id
         self._Nombre = Nombre
         self._Cargo = Cargo
         self._Salario = Salario
         self._Email = Email
         self._Telefono = Telefono
+        self._Empresa = Empresa
 
     @property
     def Id(self):
@@ -31,6 +32,10 @@ class Empleado:
     @property
     def Telefono(self):
         return self._Telefono
+    
+    @property
+    def Empresa(self):
+        return self._Empresa
 
     @Id.setter
     def Id(self, Id):
@@ -55,3 +60,7 @@ class Empleado:
     @Telefono.setter
     def Telefono(self, Telefono):
         self._Telefono = Telefono
+
+    @Empresa.setter
+    def Empresa(self, Empresa):
+        self._Empresa = Empresa

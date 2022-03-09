@@ -8,7 +8,7 @@ def Menu():
     3.Salir
     Seleccione un valor: '''
 i = 0
-emple = Empleado('Setea','Setea', 'Setea', 'Setea', 'Setea', 'Setea')
+emple = Empleado('Setea','Setea', 'Setea', 'Setea', 'Setea', 'Setea', 'Setea')
 while i != 3:
     i = int(input(Menu()))
     if i == 1:       
@@ -19,6 +19,7 @@ while i != 3:
         print(f'Salario: {emple.Salario}')
         print(f'Email: {emple.Email}')
         print(f'Telefono: {emple.Telefono}')
+        print(f'Empresa: {emple.Empresa}')
         input('Presione enter: ')
     elif i == 2:
         os.system('cls')
@@ -28,5 +29,6 @@ while i != 3:
         emple.Salario = input('Salario: ')
         emple.Email = input('Email: ')
         emple.Telefono = input('Telefono: ')
+        emple.Empresa = input('Empresa: ')
     elif i == 3:
         print('Bye Bye')
